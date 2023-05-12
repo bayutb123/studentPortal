@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Announcement;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        
-        return view('dashboard.index', ["title" => "BSI Student Portal"]);
+        $announcement = Announcement::all()->sortByDesc('id');
+        $latest = Announcement::all()->last();
+        return view('dashboard.index', ["title" => "BSI Student Portal", 'announcements' => $announcement, 'latest' => $latest]);
     }
     public function profil()
     {

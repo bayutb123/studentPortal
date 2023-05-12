@@ -18,7 +18,7 @@
     <p class="text-sm leading-6 text-gray-900">
       <strong class="font-semibold">Info Terkini</strong><svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
         <circle cx="1" cy="1" r="1" />
-      </svg>Informasi Tayang KPU sidang TA/Skripsi Periode I Tahun 2021
+      </svg>{{ $latest->subject }}
     </p>
     <a href="#" class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Selengkapnya <span aria-hidden="true">&rarr;</span></a>
   </div>
@@ -31,19 +31,20 @@
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <h2></h2>
     <div class="mx-auto mt-3 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-8 sm:pt-4 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      @foreach ($announcements as $announcement)
       <article class="flex max-w-xl flex-col items-start justify-between">
         <div class="flex items-center gap-x-4 text-xs">
-          <time datetime="2023-04-06" class="text-gray-500">Apr 6, 2023</time>
-          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Administrasi</a>
+          <time datetime="2020-03-16" class="text-gray-500">{{ $announcement->created_at }}</time>
+          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $announcement->tag }}</a>
         </div>
         <div class="group relative">
           <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
             <a href="#">
               <span class="absolute inset-0"></span>
-              Revisi Pengumuman Sosialisasi Tugas Akhir Mhs Smt 6 Prodi Perhotelan (12 April 2023)
+              {{ $announcement->subject }}
             </a>
           </h3>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
+          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ $announcement->description }}</p>
         </div>
         <div class="relative mt-8 flex items-center gap-x-4">
           <img src="/assets/img/logo.png" alt="" class="h-10 w-10 rounded-full bg-gray-50">
@@ -51,149 +52,14 @@
             <p class="font-semibold text-gray-900">
               <a href="#">
                 <span class="absolute inset-0"></span>
-                Admin
+                {{ $announcement->from }}
               </a>
             </p>
             <p class="text-gray-600">Bina Sarana Informatika</p>
           </div>
         </div>
       </article>
-
-      <article class="flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center gap-x-4 text-xs">
-          <time datetime="2023-04-06" class="text-gray-500">Apr 6, 2023</time>
-          <a href="#" class="relative z-10 rounded-full bg-green-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-green-100">Event</a>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Edaran Informasi Program Pelatihan Women Intech Kominfo Tahun 2023
-            </a>
-          </h3>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-        </div>
-        <div class="relative mt-8 flex items-center gap-x-4">
-          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-          <div class="text-sm leading-6">
-            <p class="font-semibold text-gray-900">
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Admin
-              </a>
-            </p>
-            <p class="text-gray-600">Bina Sarana Informatika</p>
-          </div>
-        </div>
-      </article>
-      <article class="flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center gap-x-4 text-xs">
-          <time datetime="2020-03-16" class="text-gray-500">Apr 6, 2023</time>
-          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Administrasi</a>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Edaran Pelaksanaan Simulasi Ujian Dalam Jaringan Semester Genap 2022-2023
-            </a>
-          </h3>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-        </div>
-        <div class="relative mt-8 flex items-center gap-x-4">
-          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-          <div class="text-sm leading-6">
-            <p class="font-semibold text-gray-900">
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Admin
-              </a>
-            </p>
-            <p class="text-gray-600">Bina Sarana Informatika</p>
-          </div>
-        </div>
-      </article>
-      <article class="flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center gap-x-4 text-xs">
-          <time datetime="2020-03-16" class="text-gray-500">Apr 4, 2023</time>
-          <a href="#" class="relative z-10 rounded-full bg-green-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-green-100">Event</a>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Edaran Pelaksanaan Kegiatan Digital Entrepreneurship Academy Kominfo Tahun 2023
-            </a>
-          </h3>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-        </div>
-        <div class="relative mt-8 flex items-center gap-x-4">
-          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-          <div class="text-sm leading-6">
-            <p class="font-semibold text-gray-900">
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Admin
-              </a>
-            </p>
-            <p class="text-gray-600">Bina Sarana Informatika</p>
-          </div>
-        </div>
-      </article>
-      <article class="flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center gap-x-4 text-xs">
-          <time datetime="2020-03-16" class="text-gray-500">Apr 4, 2023</time>
-          <a href="#" class="relative z-10 rounded-full bg-green-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-green-100">Event</a>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Edaran Pemilihan Konsentrasi Program Studi Manajemen Semester Genap 2022-2023
-            </a>
-          </h3>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-        </div>
-        <div class="relative mt-8 flex items-center gap-x-4">
-          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-          <div class="text-sm leading-6">
-            <p class="font-semibold text-gray-900">
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Admin
-              </a>
-            </p>
-            <p class="text-gray-600">Bina Sarana Informatika</p>
-          </div>
-        </div>
-      </article>
-      <article class="flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center gap-x-4 text-xs">
-          <time datetime="2020-03-16" class="text-gray-500">Apr 4, 2023</time>
-          <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Administrasi</a>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Pengumuman Sosialisasi Tugas Akhir Mhs Smt 6 Prodi Perhotelan (6 April 2023)
-            </a>
-          </h3>
-          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.</p>
-        </div>
-        <div class="relative mt-8 flex items-center gap-x-4">
-          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 rounded-full bg-gray-50">
-          <div class="text-sm leading-6">
-            <p class="font-semibold text-gray-900">
-              <a href="#">
-                <span class="absolute inset-0"></span>
-                Admin
-              </a>
-            </p>
-            <p class="text-gray-600">Bina Sarana Informatika</p>
-          </div>
-        </div>
-      </article>
+      @endforeach
     </div>
   </div>
   @stop
